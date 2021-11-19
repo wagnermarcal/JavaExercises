@@ -1,3 +1,5 @@
+package exercicio5;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +8,12 @@ import java.util.Random;
 public class Truck {
     private final String truckType;
     private final String licensePlate;
+    private final String driver;
     public List<Pluviometer> pluviometers = new ArrayList<>();
 
-    public Truck(String truckType, String licensePlate) {
+    public Truck(String truckType, String driver, String licensePlate) {
         this.truckType = truckType;
+        this.driver = driver;
         this.licensePlate = licensePlate;
     }
 
@@ -41,6 +45,10 @@ public class Truck {
         return "[" + generateLetter() + generateLetter() + generateLetter() + " - " + df.format(r.nextInt(9999)) + "]";
     }
 
+    public String getDriver() {
+        return driver;
+    }
+
     /**
      * Method for generating a random letter from A to (Z)
      *
@@ -60,11 +68,22 @@ public class Truck {
         return total;
     }
 
-    @Override
-    public String toString() {
-        return "Truck Type: " + truckType +
-                "\nLicense Plate: " + licensePlate;
+    public static String getTruckMoreApt(ArrayList<Truck> truckList) {
+        Truck moreAptTruck = truckList.get(0);
+        return "---------------------------------\n" +
+                "The fittest truck is the truck:" +
+                "\nType: " + moreAptTruck.getTruckType() +
+                "\nexercicio5.Driver: " + moreAptTruck.getDriver() +
+                "\nLicense Plate: " + moreAptTruck.getLicensePlate() +
+                "\nTotal Capacity: " + moreAptTruck.getTotalCapacity() +
+                "\n---------------------------------";
     }
 
+    @Override
+    public String toString() {
+        return "exercicio5.Truck Type: " + truckType +
+                "\nLicense Plate: " + licensePlate +
+                "\nexercicio5.Pluviometer List: " + pluviometers + "\n";
+    }
 }
 
