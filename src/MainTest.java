@@ -19,42 +19,45 @@ public class MainTest {
                 case 1:
                     System.out.println("What type of truck do you want to include?\n1. Alfa\n2. Beta");
                     int truckType = Control.readInteger();
-                    boolean validTruckType = true;
                     switch (truckType) {
                         case 1:
                             truck = new Truck("Alfa", Truck.generateLicensePlate());
-                            break;
+                            continue;
                         case 2:
                             truck = new Truck("Beta", Truck.generateLicensePlate());
-                            break;
+                            continue;
                         default:
                             System.out.println("Please, select a valid option!");
-                            validTruckType = false;
-                    }
-                    if (!validTruckType) {
-                        break;
+                            break;
                     }
                     System.out.println("How many pluviometers do you want to load onto the truck?");
                     int nPluv = Control.readInteger();
                     for (int i = 0; i < nPluv; i++) {
-                        System.out.println("What type of pluviometer do you want to add?\n1. A - 100ml\n2. B - 200ml");
+                        System.out.println("What type of pluviometer do you want to add?\nPluviometer N°" + (i + 1) + "\n1. A - 100ml\n2. B - 200ml");
                         int pluvType = Control.readInteger();
-                        System.out.println("Type of pluviometer N°" + (i + 1));
+                        boolean validPluvType = true;
                         switch (pluvType) {
                             case 1:
                                 truck.pluviometerStock(p1);
+                                continue;
                             case 2:
                                 truck.pluviometerStock(p2);
+                                continue;
+                            default:
+                                System.out.println("Please, select a valid pluviometer type option!");
+                                break;
                         }
                     }
                     trucks.add(truck);
-                    System.out.println(Control.getTotalCapacity());
-                    continue;
+                    System.out.println(truck.getTotalCapacity());
                 case 2:
                     System.out.println("Ending the program!");
                     end = true;
                     break;
             }
+        }
+        for (Truck t : trucks) {
+            t.toString();
         }
     }
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         Pluviometer p1 = new Pluviometer("A", 100);
         Pluviometer p2 = new Pluviometer("B", 200);
@@ -15,5 +15,5 @@ public class Main {
         truck.pluviometerStock(p1);
         System.out.println(Control.getTotalCapacity());
 
-    }
+    }*/
 }

@@ -13,12 +13,6 @@ public class Control {
         return scan.nextInt();
     }
 
-    public static int getTotalCapacity() {
-        int total = 0;
-        for (Pluviometer p : Truck.pluviometers) {
-            total += p.getVolumePluv();
-        }
-        return total;
-    }
+
 
 }

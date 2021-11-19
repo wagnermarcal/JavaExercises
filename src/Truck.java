@@ -6,7 +6,7 @@ import java.util.Random;
 public class Truck {
     private final String truckType;
     private final String licensePlate;
-    public static List<Pluviometer> pluviometers = new ArrayList<>();
+    public List<Pluviometer> pluviometers = new ArrayList<>();
 
     public Truck(String truckType, String licensePlate) {
         this.truckType = truckType;
@@ -50,6 +50,14 @@ public class Truck {
         Random r = new Random();
         char randomLetra = (char) (65 + r.nextInt(26));
         return String.valueOf(randomLetra);
+    }
+
+    public int getTotalCapacity() {
+        int total = 0;
+        for (Pluviometer p : pluviometers) {
+            total += p.getVolumePluv();
+        }
+        return total;
     }
 
     @Override
