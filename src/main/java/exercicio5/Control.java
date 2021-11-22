@@ -4,18 +4,39 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * This class represents the control of trucks and pluviometers, it also reads user inputs.
+ *
+ * @author wagner.marcal
+ * @version 1.0
+ */
 public class Control {
 
     private static final Scanner scan = new Scanner(System.in);
 
+    /**
+     * Method that reads a String.
+     *
+     * @return String - Return user input
+     */
     public static String readString() {
         return scan.nextLine();
     }
 
+    /**
+     * Method that reads an integer.
+     *
+     * @return int - Return user input
+     */
     public static int readInteger() {
         return scan.nextInt();
     }
 
+    /**
+     * Method that generates the trucks with the respective pluviometers that will transport, each truck has a license plate and a driver.
+     *
+     * @return ArrayList<Truck> - Returns a list of trucks
+     */
     public static ArrayList<Truck> generateTrucks() {
         List<Truck> trucks = new ArrayList<>();
         AptTruck comparator = new AptTruck();
@@ -52,7 +73,10 @@ public class Control {
                     int nPluv = Control.readInteger();
                     Control.readString();
                     for (int i = 0; i < nPluv; i++) {
-                        System.out.println("What type of pluviometer do you want to add?\nPluviometer N°" + (i + 1) + "\n1. A - 100ml\n2. B - 200ml");
+                        System.out.println("What type of pluviometer do you want to add?" +
+                                "\nPluviometer N°" + (i + 1) +
+                                "\n1. " + p1.getPluvType() + " - " + p1.getPluvVolume() + " ml" +
+                                "\n2. " + p2.getPluvType() + " - " + p2.getPluvVolume() + " ml");
                         String pluvType = Control.readString();
                         boolean validPluvType = true;
 

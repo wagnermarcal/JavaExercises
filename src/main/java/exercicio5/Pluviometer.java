@@ -1,47 +1,47 @@
 package exercicio5;
 
 /**
- * Class that represents a truck, which has its name, license plate and the pluviometers which it will load.
+ * Class that represents a pluviometer with its respective type and capacity.
  *
  * @author wagner.marcal
  * @version 1.0
  */
 public class Pluviometer {
-    private final String tipoPluv;
-    private final int volumePluv;
+    private final String pluvType;
+    private final int pluvVolume;
 
     /**
      * Constructor method of the Pluviometer class.
      *
-     * @param tipo String - Tipo do pluviômetro "Tipo 1" ou "Tipo 2".
-     * @param ml   int - Capacidade do pluviômetro em mls.
+     * @param type String - Pluviometer type "Type 1" or "Type 2".
+     * @param ml   int - Pluviometer capacity in ml.
      */
-    public Pluviometer(String tipo, int ml) {
-        tipoPluv = tipo;
-        volumePluv = ml;
+    public Pluviometer(String type, int ml) {
+        pluvType = type;
+        pluvVolume = ml;
     }
 
     /**
-     * Método para retornar a capacidade de volume do pluviômetro.
+     * Method to return the volume capacity of the pluviometer.
      *
-     * @return volumePluv int - Retorna a capacidade de volume do pluviômetro em mls.
+     * @return pluvVolume int - Returns the volume capacity of the pluviometer in ml.
      */
-    public int getVolumePluv() {
-        return volumePluv;
+    public int getPluvVolume() {
+        return pluvVolume;
     }
 
     /**
-     * Método para retornar o tipo do pluviômetro.
+     * Method to return the pluviometer type.
      *
-     * @return tipoPluv String - Retorna o tipo do pluviômetro.
+     * @return pluvType String - Returns the pluviometer type.
      */
-    public String getTipoPluv() {
-        return this.tipoPluv;
+    public String getPluvType() {
+        return this.pluvType;
     }
 
     @Override
     public String toString() {
-        return "\nPluviometer Type: " + tipoPluv +
-                "\nPluviometer volume: " + volumePluv + "\n";
+        return "\nPluviometer Type: " + pluvType +
+                "\nPluviometer volume: " + pluvVolume + "\n";
     }
 }
