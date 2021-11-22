@@ -5,7 +5,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Esta classe representa uma pessoa com os respectivos atributos e métodos.
+ * This class represents a person with the respective attributes.
  *
  * @author Wagner Marçal
  * @version 1.0
@@ -17,11 +17,11 @@ public class Person {
     private int age;
 
     /**
-     * Método construtor da classe Pessoa, onde são passados como parâmetros:
+     * Constructor method of class Person, where the following parameters are passed:
      *
-     * @param name      String - Nome da pessoa
-     * @param birthDate String - Data de nascimento da pessoa
-     * @param height    String - Altura da pessoa
+     * @param name      String - Person's name
+     * @param birthDate String - Person's birthdate
+     * @param height    String - Person's height
      */
     public Person(String name, String birthDate, String height) {
         this.setName(name);
@@ -31,27 +31,27 @@ public class Person {
     }
 
     /**
-     * Método para atribuir um nome a um objeto da classe Pessoa.
+     * Method for assigning a name to an object of class Person.
      *
-     * @param name String - Nome da pessoa
+     * @param name String - Person's name
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Método para retornar o nome do objeto da classe Pessoa.
+     * Method to return the object name of the Person class.
      *
-     * @return nome String - Nome da pessoa
+     * @return name String - Person's name
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Método para atribuir a data de nascimento ao objeto da classe Pessoa.
+     * Method for assigning the date of birth to object of class Person.
      *
-     * @param birthDate String - Data de nascimento da pessoa.
+     * @param birthDate String - Person's birthdate
      */
     public void setBirthDate(String birthDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -59,9 +59,9 @@ public class Person {
     }
 
     /**
-     * Método para retornar a data de nascimento do objeto da classe Pessoa.
+     * Method to return the date of birth of the Person class object.
      *
-     * @return dataNascimento String - Data de nascimento da pessoa.
+     * @return birthdate String - Person's birthdate
      */
     public String getBirthDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -70,28 +70,26 @@ public class Person {
     }
 
     /**
-     * Método para atribuir a altura ao objeto da classe Pessoa.
+     * Method for assigning height to object of class Person.
      *
-     * @param height String - Altura da pessoa.
+     * @param height String - Person's height
      */
     public void setHeight(String height) {
         this.height = height;
     }
 
     /**
-     * Método para retornar a altura do objeto da classe Pessoa.
+     * Method to return the height of the Person class object.
      *
-     * @return altura String - Altura da pessoa.
+     * @return height String - Person's height.
      */
     public String getHeight() {
         return this.height;
     }
 
     /**
-     * Método para calcular a idade do objeto da classe Pessoa, é utilizado o LocalDate e Period da biblioteca java.time
-     * a partir da String dataNascimento, utiliza-se o split e parse, para separar e transformar em inteiros a entrada
-     * de String do usuário, por fim, utiliza-se o Period.between entre a data atual e a data de nascimento, assim
-     * determinando a idade.
+     * Method to calculate the person's age, we use Period.between for the calculation,
+     * which takes the current day's and subtract the birth date, then returns the age in years with .getYears();.
      */
     public void getAge() {
         LocalDate today = LocalDate.now();
@@ -100,9 +98,9 @@ public class Person {
     }
 
     /**
-     * Método para imprimir no console todas as informações do objeto da classe Pessoa.
+     * Method to print all object information of class Person to console.
      *
-     * @return String - Retorna os dados da pessoa.
+     * @return String - Return person data.
      */
     public String getData() {
         return String.format("Name: %s \nBirthdate: %s \nHeight: %s \nAge: %d", this.name, getBirthDate(), this.height, this.age);

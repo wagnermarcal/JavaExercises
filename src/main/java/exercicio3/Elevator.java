@@ -1,7 +1,7 @@
 package exercicio3;
 
 /**
- * Esta classe representa um elevador com os seus respectivos atributos e métodos.
+ * This class represents an elevator with its respective attributes and methods.
  *
  * @author wagner.marcal
  * @version 1.0
@@ -12,122 +12,122 @@ public class Elevator {
     private double elevatorCapacity;
 
     /**
-     * Método inicializa para dar início à utilização do elevador, são passados os parâmetros:
+     * Method initialize to start using the elevator, the parameters are passed:
      *
-     * @param elevatorCapacity double - Capacidade do elevador.
-     * @param totalFloors      int - Total de andares do prédio.
+     * @param elevatorCapacity double - Elevator capacity.
+     * @param totalFloors      int - Total building floors.
      *                         <p>
-     *                         Também são definidos os atributos do andar atual e pessoas no elevador como sendo 0 na inicialização.
+     *                         The attributes of the current floor and people in the elevator are also set to 0 at startup.
      */
     public void initialize(double elevatorCapacity, int totalFloors) {
         this.elevatorCapacity = elevatorCapacity;
         this.totalFloors = totalFloors;
         this.currentElevatorFloor = groundFloor;
         this.personsInElevator = 0;
-        System.out.println("----------------------------\nInicializando o elevador!\n----------------------------");
+        System.out.println("----------------------------\nInitializing elevator!\n----------------------------");
     }
 
     /**
-     * Método para que as pessoas entrem no elevador, é realizada uma verificação para confirmar se não excede a capacidade, se exceder, retorna uma mensagem de erro!
+     * Method for people to enter the elevator, a check is carried out to confirm that it does not exceed capacity, if it does, it returns an error message!
      *
-     * @param peopleAmount int - Quantidade de pessoas que entrarão no elevador.
+     * @param peopleAmount int - Number of people who will enter the elevator.
      */
     public void enter(int peopleAmount) {
         if (personsInElevator + peopleAmount <= elevatorCapacity) {
             this.personsInElevator += peopleAmount;
-            System.out.println("Entraram " + peopleAmount + " pessoas ao elevador, agora temos um total de: " +
-                    personsInElevator + " pessoas no elevador!");
+            System.out.println(peopleAmount + " people entered the elevator, now we have " + personsInElevator + " in total");
         } else {
-            System.out.println("Capacidade excedida!");
+            System.out.println("Capacity exceeded!");
         }
     }
 
     /**
-     * Método para que as pessoas saíam do elevador, é realizada uma verificação para confirmar se a quantidade de pessoas a sair do elevador não é maior que a quantidade
-     * de pessoas no elevador, caso seja, retorna uma mensagem de erro!
+     * Method for people leaving the elevator, a check is carried out to confirm that the number of people leaving the
+     * elevator is not greater than the number of people in the elevator, if so, it returns an error message!
      *
-     * @param peopleAmount int - Quantidade de pessoas que sairão do elevador.
+     * @param peopleAmount int - Number of people who will leave the elevator.
      */
     public void leave(int peopleAmount) {
         if (personsInElevator - peopleAmount >= 0) {
             this.personsInElevator -= peopleAmount;
-            System.out.println("Saíram " + peopleAmount + " pessoas do elevador, agora temos um total de: " +
-                    personsInElevator + " pessoas no elevador!");
+            System.out.println(peopleAmount + " people left the elevator, now we have " + personsInElevator + " in total");
         } else {
-            System.out.println("Não há tal quantidade de pessoas no elevador!");
+            System.out.println("There aren't that many people in the elevator!");
         }
     }
 
     /**
-     * Método para que o elevador suba pelos andares, é realizada uma verificação para confirmar se o andar que ele irá subir não excede o total de andares do prédio, caso exceda, retorna uma mensagem de erro!
+     * Method for the elevator to go up through the floors, a check is carried out to confirm that the floor it will go up does
+     * not exceed the total number of floors in the building, if it does, it returns an error message!
      *
-     * @param floors int - Quantidade de andares à subir.
+     * @param floors int - Amount of floors to go up.
      */
     public void up(int floors) {
         if (currentElevatorFloor + floors < totalFloors) {
             this.currentElevatorFloor += floors;
-            System.out.println("Subindo " + floors + " andares no elevador, agora estamos no andar: " + currentElevatorFloor);
+            System.out.println("Going up " +  floors + " floors in the elevator, we are now on floor: " + currentElevatorFloor);
         } else {
-            System.out.println("O prédio não possui tantos andares!");
+            System.out.println("The building doesn't have that many floors!");
         }
     }
 
     /**
-     * Método para que o elevador desça pelos andares, é realizada uma verificação para confirmar se o andar que ele irá descer não é inferior ao andar 0 - Térreo, caso seja inferior, retorna uma mensagem de erro!
+     * Method for the elevator to descend through the floors, a check is carried out to confirm that the floor it will
+     * descend is not lower than floor 0 - Ground floor, if lower, returns an error message!
      *
-     * @param floors int - Quantidade de andares a descer.
+     * @param floors int - Amount of floors to go down.
      */
     public void down(int floors) {
         if (currentElevatorFloor - floors >= 0) {
             this.currentElevatorFloor -= floors;
-            System.out.println("Descendo " + floors + " andares no elevador, agora estamos no andar: " + currentElevatorFloor);
+            System.out.println("Going down " + floors + " floors in the elevator, now we are on floor: " + currentElevatorFloor);
         } else {
-            System.out.println("Não é possível descer tantos andares, é possível descer somente até o térreo!");
+            System.out.println("It is not possible to go down so many floors, it is only possible to go down to the ground floor!");
         }
     }
 
     /**
-     * Método para retornar a quantidade de andares no prédio.
+     * Method to return the number of floors in the building.
      *
-     * @return String - Total de andares no prédio.
+     * @return String - Total floors in the building.
      */
     public String getTotalFloors() {
-        return "Total de andares do prédio: " + totalFloors;
+        return "Total floors in the building: " + totalFloors;
     }
 
     /**
-     * Método para retornar o andar que representa o térreo, por padrão 0.
+     * Method for returning the floor that represents the ground floor, by default 0.
      *
-     * @return String - Andar do térreo.
+     * @return String - Ground floor.
      */
     public String getGroundFloor() {
-        return "O número que representa o terreo é o numero: " + groundFloor;
+        return "The number that represents the ground is the number: " + groundFloor;
     }
 
     /**
-     * Método para retornar o andar atual o qual o elevador se encontra.
+     * Method to return the current floor the elevator is on.
      *
-     * @return String - Andar atual do elevador.
+     * @return String - Current elevator floor.
      */
     public String getCurrentElevatorFloor() {
-        return "Andar atual do elevador: " + currentElevatorFloor;
+        return "Current elevator floor: " + currentElevatorFloor;
     }
 
     /**
-     * Método para retornar a capacidade do elevador.
+     * Method to return elevator capacity.
      *
-     * @return String - Capacidade do elevador.
+     * @return String - Elevator capacity.
      */
     public String getElevatorCapacity() {
-        return "Capacidade do elevador: " + elevatorCapacity;
+        return "Elevator capacity: " + elevatorCapacity;
     }
 
     /**
-     * Método para retornar a quantidade de pessoas que se encontram no elevador no presente momento.
+     * Method to return the number of people who are currently in the elevator.
      *
-     * @return String - Pessoas no elevador.
+     * @return String - People in the elevator.
      */
     public String getPersonsInElevator() {
-        return "Quantidade atual de pessoas no elevador: " + personsInElevator;
+        return "Current number of people in the elevator: " + personsInElevator;
     }
 }

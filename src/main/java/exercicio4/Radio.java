@@ -1,7 +1,7 @@
 package exercicio4;
 
 /**
- * Classe que simula uma televisão com os seus respectivos atributos.
+ * Class that simulates a radio with its respective attributes.
  *
  * @author wagner.marcal
  * @version 1.0
@@ -13,131 +13,131 @@ public class Radio {
     private final int lastStation = 300;
 
     /**
-     * Método para aumentar o volume em uma unidade, porém só irá aumentar o volume se não estiver no máximo, caso contrário retornará uma mensagem de erro!
+     * Method to increase the volume by one unit, however it will only increase the volume if it is not at the maximum, otherwise it will return an error message!
      */
     public void increaseVolume() {
         if (this.volume + 1 <= this.getMaxVolume()) {
             this.volume += 1;
-            System.out.println("Aumentando o volume " + "\nVolume atual: " + getVolume());
+            System.out.println("Increasing the volume " + "\nCurrent volume: " + getVolume());
         } else {
-            System.out.println("Volume máximo atingido!");
+            System.out.println("Max volume reached!");
         }
     }
 
     /**
-     * Método para diminuir o volume em uma unidade, porém só irá diminuir o volume se não estiver no mínimo, caso contrário retornará uma mensagem de erro!
+     * Method to decrease the volume by one unit, however it will only decrease the volume if it is not at the minimum, otherwise it will return an error message!
      */
     public void decreaseVolume() {
         if (this.volume - 1 > 0) {
             this.volume -= 1;
-            System.out.println("Diminuindo o volume " + "\nVolume atual: " + getVolume());
+            System.out.println("Decreasing the volume " + "\nCurrent volume: " + getVolume());
         } else {
-            System.out.println("Você não pode mais diminuir o valor, mínimo de 0 atingido.");
+            System.out.println("You can no longer decrease the value, minimum 0 reached.");
         }
     }
 
     /**
-     * Método para passar de um canal para o outro, incrementa o canal em uma unidade, só irá para o próximo canal se não estiver no último canal, caso esteja, volta ao primeiro canal.
+     * Method to pass from one channel to another, it increments the channel by one unit, it will only go to the next channel if it is not in the last channel, if it is, it goes back to the first channel.
      */
     public void passStation() {
         if (this.station + 1 < lastStation) {
             this.station += 1;
-            System.out.println("Passando para o próximo canal!\nCanal atual: " + this.station);
+            System.out.println("Moving on to the next station!\nCurrent station: " + this.station);
         } else {
             this.station = 1;
-            System.out.println("Voltando ao canal anterior!\nCanal atual: " + this.station);
+            System.out.println("Going back to the previous!\nCurrent station: " + this.station);
         }
     }
 
     /**
-     * Método para voltar de um canal para o outro, decrementa o canal em uma unidade, só irá para o canal anterior se não estiver no primeiro canal, caso esteja, retorna ao último canal.
+     * Method to go back from one channel to another, decrements the channel by one unit, it will only go to the previous channel if it is not in the first channel, if it is, it returns to the last channel.
      */
     public void backStation() {
         if (this.station - 1 > 0) {
             this.station -= 1;
-            System.out.println("Passando para o canal anterior!\nCanal atual: " + this.station);
+            System.out.println("Moving to the previous station!\nCurrent station: " + this.station);
         } else {
             this.station = lastStation;
-            System.out.println("Voltando para o último canal!\nCanal atual: " + this.station);
+            System.out.println("Going back to the last station!\nCurrent station: " + this.station);
         }
     }
 
     /**
-     * Método para consultar o volume, retorna o volume atual da televisão.
+     * Method for querying the volume, returns the current volume of the television.
      */
-    public void consultaVolume() {
-        System.out.println("Volume atual: " + getVolume());
+    public void consultVolume() {
+        System.out.println("Current volume: " + getVolume());
     }
 
     /**
-     * Método para consultar o canal, retorna o volume atual do canal.
+     * Method to query the channel, returns the current volume of the channel.
      */
     public void consultStation() {
-        System.out.println("Canal atual: " + getStation());
+        System.out.println("Current station: " + getStation());
     }
 
     /**
-     * Método para trocar de canal, é passado como parâmetro o novo canal, o canal não pode ser menor ou igual a 0 e precisa ser menor que o valor do último canal.
+     * Method to change stations, the new station is passed as parameter, the station cannot be less than or equal to 0 and must be less than the value of the last station.
      *
-     * @param newStation int - Parâmetro que passa como inteiro o valor do novo canal.
+     * @param newStation int - Parameter that passes the value of the new channel as an integer.
      */
     public void changeStation(int newStation) {
         if (newStation > 0 && newStation <= this.getLastStation()) {
             setStation(newStation);
         } else {
-            System.out.println("Este canal não existe!");
+            System.out.println("This station does not exist!");
         }
     }
 
     /**
-     * Método para retornar o volume atual, utilizado somente na classe da televisão.
+     * Method to return the current volume, used only in the television class.
      *
-     * @return volume int - Retorna o valor inteiro do volume atual.
+     * @return volume int - Returns the integer value of the current volume.
      */
     private int getVolume() {
         return volume;
     }
 
     /**
-     * Método para retornar o canal atual, utilizado somente na classe da televisão.
+     * Method to return the current station, used only in the radio class.
      *
-     * @return canal int - Retorna o valor inteiro do canal atual.
+     * @return canal int - Returns the integer value of the current station.
      */
     private int getStation() {
         return station;
     }
 
     /**
-     * Método para definir o volume, utilizado somente na classe da televisão.
+     * Method for setting the volume, used only in the radio class.
      *
-     * @param volume int - Volume à ser definido, representado por um inteiro.
+     * @param volume int - Volume to be defined, represented by an integer.
      */
     private void setVolume(int volume) {
         this.volume = volume;
     }
 
     /**
-     * Método para definir um canal, utilizado somente na classe da televisão.
+     * Method to define a station, used only in the radio class.
      *
-     * @param station int - Canal à ser definido, representado por um inteiro.
+     * @param station int - Station to be defined, represented by an integer.
      */
     private void setStation(int station) {
         this.station = station;
     }
 
     /**
-     * Método para retornar o volume máximo, utilizado somente na classe da televisão
+     * Method to return the maximum volume, used only in the radio class.
      *
-     * @return maxVolume int - Retorna o valor o valor inteiro do volume máximo.
+     * @return maxVolume int - Returns the integer value of the maximum volume.
      */
     private int getMaxVolume() {
         return maxVolume;
     }
 
     /**
-     * Método para retornar o último canal, utilizado somente na classe da televisão.
+     * Method to return the last station, used only in the radio class.
      *
-     * @return maxCanal int - Retorna o valor inteiro do último canal.
+     * @return maxCanal int - Returns the integer value of the last channel.
      */
     private int getLastStation() {
         return lastStation;

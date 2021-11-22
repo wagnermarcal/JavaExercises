@@ -11,7 +11,7 @@ public class Pluviometer {
     private final int volumePluv;
 
     /**
-     * Constructor method of the exercicio5.Pluviometer class.
+     * Constructor method of the Pluviometer class.
      *
      * @param tipo String - Tipo do pluviômetro "Tipo 1" ou "Tipo 2".
      * @param ml   int - Capacidade do pluviômetro em mls.
@@ -41,7 +41,7 @@ public class Pluviometer {
 
     @Override
     public String toString() {
-        return "\nexercicio5.Pluviometer Type: " + tipoPluv +
-                "\nexercicio5.Pluviometer volume: " + volumePluv + "\n";
+        return "\nPluviometer Type: " + tipoPluv +
+                "\nPluviometer volume: " + volumePluv + "\n";
     }
 }

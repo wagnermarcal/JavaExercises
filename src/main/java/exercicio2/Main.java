@@ -27,15 +27,15 @@ public class Main {
         schedule1.addPerson(davi); // Armazenando aline na ArrayList do tipo Pessoas da classe Agenda.
         schedule1.addPerson(aline); // Armazenando roberto na ArrayList do tipo Pessoas da classe Agenda.
         schedule1.addPerson(roberto); // Armazenando maria na ArrayList do tipo Pessoas da classe Agenda.
-        schedule1.removePessoa(roberto); // Armazenando roberto na ArrayList do tipo Pessoas da classe Agenda.
-        schedule1.removePessoa(michel); // Armazenando michel na ArrayList do tipo Pessoas da classe Agenda.
-        schedule1.removePessoa(joao); // Armazenando joao na ArrayList do tipo Pessoas da classe Agenda.
+        schedule1.removePerson(roberto); // Armazenando roberto na ArrayList do tipo Pessoas da classe Agenda.
+        schedule1.removePerson(michel); // Armazenando michel na ArrayList do tipo Pessoas da classe Agenda.
+        schedule1.removePerson(joao); // Armazenando joao na ArrayList do tipo Pessoas da classe Agenda.
         schedule1.addPerson(maria); // Armazenando jean na ArrayList do tipo Pessoas da classe Agenda.
 
-        schedule1.buscaPessoa(aline); // Buscando dados da Pessoa aline.
-        schedule1.imprimePessoa(5); // Imprimindo dados da pessoa que está no index 5 da lista.
+        schedule1.findPerson(aline); // Buscando dados da Pessoa aline.
+        schedule1.printPerson(5); // Imprimindo dados da pessoa que está no index 5 da lista.
 
-        schedule1.imprimeAgenda(); // Imprimindo todas as pessoas contidas na ArrayList agenda.
+        schedule1.printSchedule(); // Imprimindo todas as pessoas contidas na ArrayList agenda.
 
         System.out.println(schedule1.arraySize()); // Imprimindo o tamanho da ArrayList.
     }

@@ -52,7 +52,7 @@ public class Control {
                     int nPluv = Control.readInteger();
                     Control.readString();
                     for (int i = 0; i < nPluv; i++) {
-                        System.out.println("What type of pluviometer do you want to add?\nexercicio5.Pluviometer N°" + (i + 1) + "\n1. A - 100ml\n2. B - 200ml");
+                        System.out.println("What type of pluviometer do you want to add?\nPluviometer N°" + (i + 1) + "\n1. A - 100ml\n2. B - 200ml");
                         String pluvType = Control.readString();
                         boolean validPluvType = true;
 
@@ -71,7 +71,6 @@ public class Control {
                     }
                     trucks.add(truck);
                     assert truck != null;
-                    System.out.println(truck.getTotalCapacity());
                     continue;
 
                 case "2":

@@ -3,7 +3,7 @@ package exercicio4;
 public class RadioControl extends Radio implements RemoteControlActions {
 
     /**
-     * Método para aumentar o volume em uma unidade, porém só irá aumentar o volume se não estiver no máximo, caso contrário retornará uma mensagem de erro!
+     * Method to increase the volume by one unit, however it will only increase the volume if it is not at the maximum, otherwise it will return an error message!
      */
     @Override
     public void increaseVolume() {
@@ -11,7 +11,7 @@ public class RadioControl extends Radio implements RemoteControlActions {
     }
 
     /**
-     * Método para diminuir o volume em uma unidade, porém só irá diminuir o volume se não estiver no mínimo, caso contrário retornará uma mensagem de erro!
+     * Method to decrease the volume by one unit, however it will only decrease the volume if it is not at the minimum, otherwise it will return an error message!
      */
     @Override
     public void decreaseVolume() {
@@ -19,7 +19,7 @@ public class RadioControl extends Radio implements RemoteControlActions {
     }
 
     /**
-     * Método para passar de um canal para o outro, incrementa o canal em uma unidade, só irá para o próximo canal se não estiver no último canal, caso esteja, volta ao primeiro canal.
+     * Method to pass from one station to another, it increments the station by one unit, it will only go to the next station if it is not in the last station, if it is, it goes back to the first station.
      */
     @Override
     public void passChannel() {
@@ -27,7 +27,7 @@ public class RadioControl extends Radio implements RemoteControlActions {
     }
 
     /**
-     * Método para voltar de um canal para o outro, decrementa o canal em uma unidade, só irá para o canal anterior se não estiver no primeiro canal, caso esteja, retorna ao último canal.
+     * Method to go back from one station to another, decrements the station by one unit, it will only go to the previous station if it is not in the first station, if it is, it returns to the last station.
      */
     @Override
     public void backChannel() {
@@ -35,15 +35,15 @@ public class RadioControl extends Radio implements RemoteControlActions {
     }
 
     /**
-     * Método para consultar o volume, retorna o volume atual da televisão.
+     * Method for querying the volume, returns the current radio volume.
      */
     @Override
     public void consultVolume() {
-        super.consultaVolume();
+        super.consultVolume();
     }
 
     /**
-     * Método para consultar o canal, retorna o volume atual do canal.
+     * Method for querying the station, returns the current station..
      */
     @Override
     public void consultChannel() {
@@ -51,9 +51,9 @@ public class RadioControl extends Radio implements RemoteControlActions {
     }
 
     /**
-     * Método para trocar de canal, é passado como parâmetro o novo canal, o canal não pode ser menor ou igual a 0 e precisa ser menor que o valor do último canal.
+     * Method to change stations, the new station is passed as parameter, the station cannot be less than or equal to 0 and must be less than the value of the last station.
      *
-     * @param novoCanal int - Parâmetro que passa como inteiro o valor do novo canal.
+     * @param novoCanal int - Parameter that passes the value of the new station as an integer.
      */
     @Override
     public void changeChannel(int novoCanal) {

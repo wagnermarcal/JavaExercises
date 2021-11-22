@@ -73,17 +73,17 @@ public class Truck {
         return "---------------------------------\n" +
                 "The fittest truck is the truck:" +
                 "\nType: " + moreAptTruck.getTruckType() +
-                "\nexercicio5.Driver: " + moreAptTruck.getDriver() +
+                "\nDriver: " + moreAptTruck.getDriver() +
                 "\nLicense Plate: " + moreAptTruck.getLicensePlate() +
-                "\nTotal Capacity: " + moreAptTruck.getTotalCapacity() +
+                "\nTotal Capacity: " + moreAptTruck.getTotalCapacity() + "ml" +
                 "\n---------------------------------";
     }
 
     @Override
     public String toString() {
-        return "exercicio5.Truck Type: " + truckType +
+        return "Truck Type: " + truckType +
                 "\nLicense Plate: " + licensePlate +
-                "\nexercicio5.Pluviometer List: " + pluviometers + "\n";
+                "\nPluviometer List: " + pluviometers + "\n";
     }
 }
 
