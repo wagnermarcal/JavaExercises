@@ -3,6 +3,8 @@ package exercicio5;
 import com.devskiller.jfairy.Fairy;
 import com.devskiller.jfairy.producer.person.Person;
 
+import java.io.Serializable;
+
 import static com.devskiller.jfairy.producer.person.PersonProperties.maxAge;
 import static com.devskiller.jfairy.producer.person.PersonProperties.minAge;
 
@@ -12,7 +14,7 @@ import static com.devskiller.jfairy.producer.person.PersonProperties.minAge;
  * @author wagner.marcal
  * @version 1.0
  */
-public class Driver {
+public class Driver implements Serializable {
     private static final Fairy fairy = Fairy.create();
 
     /**

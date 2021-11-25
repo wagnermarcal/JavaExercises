@@ -1,12 +1,14 @@
 package exercicio5;
 
+import java.io.Serializable;
+
 /**
  * Class that represents a pluviometer with its respective type and capacity.
  *
  * @author wagner.marcal
  * @version 1.0
  */
-public class Pluviometer {
+public class Pluviometer implements Serializable {
     private final String pluvType;
     private final int pluvVolume;
 
@@ -42,6 +44,7 @@ public class Pluviometer {
     @Override
     public String toString() {
         return "\nPluviometer Type: " + pluvType +
-                "\nPluviometer volume: " + pluvVolume + "\n";
+                "\nPluviometer volume: " + pluvVolume + "\n" +
+                "\n----------------------------------------";
     }
 }

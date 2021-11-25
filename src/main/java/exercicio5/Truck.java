@@ -1,5 +1,6 @@
 package exercicio5;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Random;
  * @author wagner.marcal
  * @version 1.0
  */
-public class Truck {
+public class Truck implements Serializable {
     private final String truckType;
     private final String licensePlate;
     private final String driver;
@@ -51,6 +52,7 @@ public class Truck {
 
     /**
      * Method that returns the license plate from the truck.
+     *
      * @return licensePlate String - Returns the license plate from the truck.
      */
     public String getLicensePlate() {
@@ -59,6 +61,7 @@ public class Truck {
 
     /**
      * Method to return the list of pluviometers that the truck is transporting.
+     *
      * @return pluviometers List<Pluviometer> - Returns the truck's pluviometers list.
      */
     public List<Pluviometer> getPluviometersList() {
@@ -94,6 +97,7 @@ public class Truck {
 
     /**
      * Method to return the total capacity in ml that the truck is transporting in pluviometers.
+     *
      * @return total int - Total truck capacity in ml of pluviometers.
      */
     public int getTotalCapacity() {
@@ -123,8 +127,11 @@ public class Truck {
 
     @Override
     public String toString() {
-        return "Truck Type: " + truckType +
+        return "\n----------------------------------------" +
+                "\nTruck Type: " + truckType +
                 "\nLicense Plate: " + licensePlate +
+                "\nDriver: " + driver +
+                "\n----------------------------------------" +
                 "\nPluviometer List: " + pluviometers + "\n";
     }
 }

@@ -1,5 +1,6 @@
 package exercicio5;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Comparator;
  * @author wagner.marcal
  * @version 1.0
  */
-public class AptTruck implements Comparator<Truck> {
+public class AptTruck implements Comparator<Truck>, Serializable {
 
     @Override
     public int compare(Truck o1, Truck o2) {
