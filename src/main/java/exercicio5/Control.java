@@ -12,6 +12,7 @@ import java.util.List;
  * @version 1.0
  */
 public class Control implements Serializable {
+    private static final long serialVersionUID = Truck.serialVersionUID;
 
     /**
      * Method for validating user input.
@@ -127,7 +128,7 @@ public class Control implements Serializable {
     }
 
     /**
-     * Método que contém as opções de pluviômetros, retorna como inteiro a opção do usuário.
+     * MÃ©todo que contÃ©m as opÃ§Ãµes de pluviÃ´metros, retorna como inteiro a opÃ§Ã£o do usuÃ¡rio.
      *
      * @param p1 Pluviometer - Take p1 as a parameter to use its methods
      * @param p2 Pluviometer - Take p2 as a parameter to use its methods
@@ -138,7 +139,7 @@ public class Control implements Serializable {
         String pluviometerTypeMenu;
         String pluviometerTypeUserInput;
         pluviometerTypeMenu = "What type of pluviometer do you want to add?" +
-                "\nPluviometer N°" + (i + 1) +
+                "\nPluviometer NÂ°" + (i + 1) +
                 "\n1. " + p1.getPluvType() + " - " + p1.getPluvVolume() + " ml" +
                 "\n2. " + p2.getPluvType() + " - " + p2.getPluvVolume() + " ml";
         pluviometerTypeUserInput = JOptionPane.showInputDialog(pluviometerTypeMenu);

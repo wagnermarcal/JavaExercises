@@ -13,6 +13,7 @@ import java.util.Random;
  * @version 1.0
  */
 public class Truck implements Serializable {
+    public static final long serialVersionUID = 1L;
     private final String truckType;
     private final String licensePlate;
     private final String driver;

@@ -10,6 +10,7 @@ import java.util.Comparator;
  * @version 1.0
  */
 public class AptTruck implements Comparator<Truck>, Serializable {
+    private static final long serialVersionUID = Truck.serialVersionUID;
 
     @Override
     public int compare(Truck o1, Truck o2) {

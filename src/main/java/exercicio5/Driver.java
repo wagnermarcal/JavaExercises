@@ -15,6 +15,7 @@ import static com.devskiller.jfairy.producer.person.PersonProperties.minAge;
  * @version 1.0
  */
 public class Driver implements Serializable {
+    private static final long serialVersionUID = Truck.serialVersionUID;
     private static final Fairy fairy = Fairy.create();
 
     /**

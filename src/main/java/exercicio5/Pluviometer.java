@@ -9,6 +9,7 @@ import java.io.Serializable;
  * @version 1.0
  */
 public class Pluviometer implements Serializable {
+    private static final long serialVersionUID = Truck.serialVersionUID;
     private final String pluvType;
     private final int pluvVolume;
 
