@@ -3,7 +3,11 @@ package exercicio5;
 import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+
+import static java.util.Comparator.comparing;
+import static java.util.Comparator.reverseOrder;
 
 /**
  * This class represents the control of trucks and pluviometers, it also reads user inputs.
@@ -49,7 +53,6 @@ public class Control implements Serializable {
      */
     public static ArrayList<Truck> generateTrucks() {
         ArrayList<Truck> trucks = new ArrayList<>();
-        AptTruck comparator = new AptTruck();
         Pluviometer p1 = new Pluviometer("A", 100);
         Pluviometer p2 = new Pluviometer("B", 200);
         boolean end = false;
@@ -112,7 +115,8 @@ public class Control implements Serializable {
                     break;
                 case 6:
                     if (!trucks.isEmpty()) {
-                        trucks.sort(comparator);
+                        trucks.sort(comparing(t -> t.getTotalCapacity()));
+                        trucks.sort(Comparator.<Truck>reverseOrder());
                         JOptionPane.showMessageDialog(null, "The more fittest truck are: " + trucks.get(0));
                     } else {
                         JOptionPane.showMessageDialog(null, "There is no fitter truck, as none has been inserted.");

@@ -12,7 +12,7 @@ import java.util.Random;
  * @author wagner.marcal
  * @version 1.0
  */
-public class Truck implements Serializable {
+public class Truck implements Serializable, Comparable<Truck> {
     public static final long serialVersionUID = 1L;
     private final String truckType;
     private final String licensePlate;
@@ -101,8 +101,8 @@ public class Truck implements Serializable {
      *
      * @return total int - Total truck capacity in ml of pluviometers.
      */
-    public int getTotalCapacity() {
-        int total = 0;
+    public Integer getTotalCapacity() {
+        Integer total = 0;
         for (Pluviometer p : pluviometers) {
             total += p.getPluvVolume();
         }
@@ -134,6 +134,18 @@ public class Truck implements Serializable {
                 "\nDriver: " + driver +
                 "\n----------------------------------------" +
                 "\nPluviometer List: " + pluviometers + "\n";
+    }
+
+
+    /**
+     * Method that makes the comparison of trucks, taking into account the total capacity of pluviometers that it carries.
+     *
+     * @param o - Truck type Object
+     * @return int - Resulting from the comparison.
+     */
+    @Override
+    public int compareTo(Truck o) {
+        return this.getTotalCapacity().compareTo(o.getTotalCapacity());
     }
 }
 
